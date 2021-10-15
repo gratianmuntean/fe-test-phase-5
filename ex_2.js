@@ -8,4 +8,21 @@
 // Input: arr = [1,2,3,4];
 // Output: -1;
 
-const getDuplicates = (list) => {};
+const getDuplicates = (list) => {
+    var output = [];
+    var size = list.length;
+
+    for(var i=0; i<size; i++)
+        for(var j=i+1; j<size; j++)
+        {
+            tocheck = list[i];
+            if(tocheck==list[j]){ 
+                if(!output.includes(tocheck))
+                    output.push(tocheck);
+            }
+        }
+    if(output.length==0) return -1
+        else return output;
+
+
+};

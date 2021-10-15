@@ -9,4 +9,23 @@
 // Input: [2,9,9]
 // Output: [3,0,0]
 
-const plusOne = (list) => {};
+const plusOne = (list) => {
+    var i=list.length-1;
+    
+            while(i>=0){
+                if(list[i]<9){
+                    list[i]++; 
+                    break; 
+                }
+                else{
+                    list[i]=0
+                    i--;
+                    if(i==0&&list[i]==9) {
+                        list[i]=0;
+                        list.splice(0, 0, 1);
+                        break;
+                        }
+                    }
+            }
+    return list;
+};
