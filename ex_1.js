@@ -10,3 +10,4 @@
 // Output: [3,0,0]
 
 const plusOne = (list) => {};
+console.log("Test Push")
