@@ -9,5 +9,29 @@
 // Input: [2,9,9]
 // Output: [3,0,0]
 
-const plusOne = (list) => {};
-console.log("Test Push")
+const plusOne = (list) => {
+
+let number = 0;
+let n = list.length;
+let odds = 10;
+let newList = Array();
+
+for (let i=0; i<n; i++){
+
+    number =(number * odds ) + list[i];
+   // console.log(number);
+}
+
+number++;
+//console.log(number);
+
+newList = Array.from(String(number), myFunc);
+
+console.log(newList);
+
+};
+
+let myFunc = num => Number(num);
+
+console.log(plusOne([2,3,4]));
+console.log(plusOne([2,9,9]));
