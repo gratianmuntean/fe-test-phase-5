@@ -8,6 +8,8 @@
 // Input: arr = [1,2,3,4];
 // Output: -1;
 
+//Solution 1
+
 const getDuplicates = (list) => {
 
     let n =list.length;
@@ -41,3 +43,44 @@ const getDuplicates = (list) => {
 console.log(getDuplicates([7, 3, 5, 5, 4, 3, 5, 4, 8, 8]));
 console.log(getDuplicates([1,2,3,4]));
 
+
+
+// Solution 2 (optimal)
+
+
+const getDuplicates2 = (list) => {
+
+    let n =list.length;
+    const map = new Map();
+    let newList = new Array();
+
+    for (let i=0; i < n; i++){
+        var item = list[i];
+        if (map.has(item)){
+            map.set(item,map.get(item)+1);
+        }
+        else{
+            map.set(item,1);
+        }
+    }
+
+    let ifExist = false;
+
+    for (let key of map.keys()){
+        if(map.get(key) > 1){
+            newList.push(key);
+            ifExist = true;
+        }
+    }
+
+    if(ifExist == true){
+        console.log(newList);
+    }
+    else {
+        console.log("-1");
+    }
+
+}
+
+console.log(getDuplicates2([7, 3, 5, 5, 4, 3, 5, 4, 8, 8]));
+console.log(getDuplicates2([1,2,3,4]));
